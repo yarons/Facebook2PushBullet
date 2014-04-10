@@ -28,4 +28,9 @@ If this project will go forward I plan to build some additional parsers using ba
 
 Is ruining my fun your main goal in life? ☺
 
+### My inspiration
+
+http://unix.stackexchange.com/questions/22137/how-to-watch-rss-feed-for-new-entries-from-bash-script
+Thanks guys!
+
 Feel free to fork and improve.
