@@ -46,8 +46,8 @@ curl https://api.pushbullet.com/api/pushes \
 last=""
 while true
 do
-    now="$(curl -s $FB_NOTIF_URL | awk '/title/ ,/pubDate/' | grep 'title\|pubDate' | sed -e 's/<[^!>]*>//g' | sed 's/^\s*//g' | grep -Po '(?<=TA\[)(.*)(?=\]\])|^([^<]*)(?=\s\-)' | perl -pe 's/(?<=[^\d])\n/ /g' | head -1)"
+    now="$(curl -s $FB_NOTIF_URL | awk '/title/ ,/pubDate/' | grep 'title\|pubDate' | sed -e 's/<[^!>]*>//g' | sed 's/^\s*//g' | grep -Po '(?<=TA\[)(.*)(?=\]\])|^([^<]*)(?=\s\-\d)' | perl -pe 's/(?<=[^\d])\n/ /g' | head -1)"
     test "$last" != "$now" && pb
     last="$now"
-    sleep 1m
+    sleep $INTERVAL
 done
